@@ -97,15 +97,6 @@
   min-height: 0;
 }
 
-.placeholder {
-  margin: 1.2rem;
-  color: var(--dim);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-@media (max-width: 860px) {
   .mast {
     grid-template-columns: 1fr;
     align-items: start;

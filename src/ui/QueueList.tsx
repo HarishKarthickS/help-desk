@@ -3,6 +3,7 @@
 import { useDesk } from "@/data";
 import { matchesFilters, slaBreached, slaRemainingLabel, sortQueue } from "@/domain";
 import { FilterBar } from "./FilterBar";
+import { EmptyState } from "./EmptyState";
 import { PriorityMark, StatusChip } from "./StatusChip";
 import styles from "./QueueList.module.css";
 
@@ -19,13 +20,10 @@ export function QueueList() {
         {rows.length.toString().padStart(2, "0")} in view
       </div>
       {rows.length === 0 ? (
-        <div className={styles.empty} role="status">
-          <strong>queue is quiet</strong>
-          <p>
-            Nothing matches these filters. Clear them, or reload seed if you
-            wiped the board.
-          </p>
-        </div>
+        <EmptyState
+          title="queue is quiet"
+          body="Nothing matches these filters. Clear them, or reload seed if you wiped the board."
+        />
       ) : (
         <ul className={styles.list}>
           {rows.map((t) => {
