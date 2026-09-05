@@ -17,15 +17,13 @@ export function QueueList() {
     <div className={styles.wrap}>
       <FilterBar />
       <div className={styles.meta}>
-        <span>flt</span>
-        <span>destination</span>
-        <span>from / to</span>
-        <span className={styles.metaTail}>{rows.length.toString().padStart(2, "0")} listed</span>
+        <span>Tickets</span>
+        <span className={styles.metaTail}>{rows.length} shown</span>
       </div>
       {rows.length === 0 ? (
         <EmptyState
-          title="board blank"
-          body="No flights match these filters. Clear them, or reload the board if you wiped the list."
+          title="No tickets"
+          body="Nothing matches these filters. Clear them, or reset the queue if the list was wiped."
         />
       ) : (
         <ul className={styles.list}>
@@ -42,14 +40,14 @@ export function QueueList() {
                   <span className={styles.subject}>{t.subject}</span>
                   <span className={styles.who}>
                     {t.requester.split("@")[0]}
-                    {t.assignee ? ` → ${t.assignee}` : " → hold"}
+                    {t.assignee ? ` · ${t.assignee}` : " · Unassigned"}
                   </span>
                   <span className={styles.tags}>
                     <PriorityMark priority={t.priority} />
                     <StatusChip status={t.status} />
                     <span className={styles.q}>{t.queue}</span>
                     <span className={hot ? styles.slaHot : styles.sla}>
-                      etd {slaRemainingLabel(t, now)}
+                      SLA {slaRemainingLabel(t, now)}
                     </span>
                   </span>
                 </button>

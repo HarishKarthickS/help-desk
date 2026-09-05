@@ -2,35 +2,22 @@ import { EmptyState } from "@/ui/EmptyState";
 
 export default function NotFound() {
   return (
-    <main style={{ padding: "2rem", background: "#070707", minHeight: "100vh" }}>
+    <main style={{ padding: "2rem", minHeight: "100vh" }}>
       <p
         style={{
-          fontFamily: "Anton, sans-serif",
-          letterSpacing: "0.06em",
-          color: "#ff6a00",
-          fontSize: "2.4rem",
-          margin: 0,
-          textTransform: "uppercase",
+          fontWeight: 600,
+          fontSize: "1.05rem",
+          margin: "0 0 0.75rem",
         }}
       >
-        Departures
+        Help desk
       </p>
       <EmptyState
-        title="gate closed"
-        body="That path is not a queue, ticket, or operator screen. Return to the board."
+        title="Page not found"
+        body="That path is not a queue, ticket, or operator screen. Return to the inbox."
       />
-      <a
-        href="/"
-        style={{
-          marginLeft: "0.9rem",
-          color: "#ff6a00",
-          fontFamily: "Chivo Mono, monospace",
-          fontSize: "0.75rem",
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-        }}
-      >
-        return to board
+      <a href="/" style={{ marginLeft: "1.1rem", fontSize: "0.88rem" }}>
+        Back to inbox
       </a>
     </main>
   );

@@ -10,40 +10,36 @@ export default function ErrorPage({
   reset: () => void;
 }) {
   return (
-    <main style={{ padding: "2rem", background: "#070707", minHeight: "100vh" }}>
+    <main style={{ padding: "2rem", minHeight: "100vh" }}>
       <p
         style={{
-          fontFamily: "Anton, sans-serif",
-          letterSpacing: "0.06em",
-          color: "#ff6a00",
-          fontSize: "2.4rem",
-          margin: 0,
-          textTransform: "uppercase",
+          fontWeight: 600,
+          fontSize: "1.05rem",
+          margin: "0 0 0.75rem",
         }}
       >
-        Departures
+        Help desk
       </p>
       <EmptyState
-        title="board fault"
-        body={error.message || "The queue failed to render. Retry, or reload the board from the masthead."}
+        title="Something went wrong"
+        body={error.message || "The queue failed to render. Retry, or reset the queue from the header."}
       />
       <button
         type="button"
         onClick={reset}
         style={{
-          marginLeft: "0.9rem",
-          background: "linear-gradient(#1c1c1c, #0a0a0a)",
-          border: "1px solid #333",
-          color: "#ececec",
-          padding: "0.4rem 0.7rem",
+          marginLeft: "1.1rem",
+          background: "#4f46e5",
+          border: 0,
+          color: "#fff",
+          padding: "0.4rem 0.75rem",
           cursor: "pointer",
-          fontFamily: "Chivo Mono, monospace",
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          fontSize: "0.7rem",
+          borderRadius: 6,
+          fontWeight: 600,
+          fontSize: "0.85rem",
         }}
       >
-        retry
+        Retry
       </button>
     </main>
   );
