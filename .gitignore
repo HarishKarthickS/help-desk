@@ -1,0 +1,27 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next
+.next
+out
+next-env.d.ts
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env
+.env
+.env*.local
+
+# os / ide
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# typescript
+*.tsbuildinfo
