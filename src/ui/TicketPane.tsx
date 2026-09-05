@@ -4,6 +4,7 @@ import { OPERATORS, useDesk } from "@/data";
 import { nextStatuses, slaRemainingLabel, statusLabel } from "@/domain";
 import { useState } from "react";
 import { PriorityMark, StatusChip } from "./StatusChip";
+import { EmptyState } from "./EmptyState";
 import styles from "./TicketPane.module.css";
 
 export function TicketPane() {
@@ -14,10 +15,10 @@ export function TicketPane() {
 
   if (!ticket) {
     return (
-      <div className={styles.empty} role="status">
-        <strong>no ticket selected</strong>
-        <p>Pick a row in the queue. The thread, status moves, and notes live here.</p>
-      </div>
+      <EmptyState
+        title="no ticket selected"
+        body="Pick a row in the queue. The thread, status moves, and notes live here."
+      />
     );
   }
 
