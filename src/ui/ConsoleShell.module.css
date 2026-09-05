@@ -97,6 +97,7 @@
   min-height: 0;
 }
 
+@media (max-width: 860px) {
   .mast {
     grid-template-columns: 1fr;
     align-items: start;
