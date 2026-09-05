@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "help-desk — departures",
-  description: "Airport FIDS board for support tickets, queues, and comments.",
+  title: "Help desk",
+  description: "Support tickets, status filters, and a conversation pane.",
 };
 
 export default function RootLayout({
