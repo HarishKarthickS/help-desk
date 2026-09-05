@@ -1,23 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Anton&family=Chivo+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap");
 
 :root {
-  --board: #070707;
-  --board-lift: #101010;
-  --flap: #161616;
-  --flap-hi: #222;
-  --hinge: #000;
-  --rule: #2c2c2c;
-  --legend: #ececec;
-  --dim: #7a7a7a;
-  --gone: #454545;
-  --orange: #ff6a00;
-  --orange-deep: #c24e00;
-  --delay: #ff2d00;
-  --ontime: #d0ff3c;
-  --hold: #4aa3ff;
-  --shadow: 0 10px 0 -8px #000;
-  --display: "Anton", "Arial Black", sans-serif;
-  --type: "Chivo Mono", ui-monospace, monospace;
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --surface-2: #fafafa;
+  --line: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --faint: #9ca3af;
+  --accent: #4f46e5;
+  --accent-soft: #eef2ff;
+  --danger: #b42318;
+  --danger-soft: #fef3f2;
+  --ok: #067647;
+  --warn: #b54708;
+  --shadow: 0 1px 2px rgba(17, 24, 39, 0.06);
+  --radius: 8px;
+  --font: "Outfit", ui-sans-serif, system-ui, sans-serif;
 }
 
 *,
@@ -30,17 +29,11 @@ html,
 body {
   margin: 0;
   min-height: 100%;
-  background: var(--board);
-  color: var(--legend);
-  font-family: var(--type);
-  font-size: 13px;
-  line-height: 1.4;
-}
-
-body {
-  background-image:
-    radial-gradient(1200px 420px at 50% -80px, rgba(255, 106, 0, 0.09), transparent 70%),
-    linear-gradient(180deg, #0e0e0e 0%, var(--board) 140px);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.45;
 }
 
 button,
@@ -52,10 +45,10 @@ textarea {
 }
 
 a {
-  color: var(--orange);
+  color: var(--accent);
 }
 
 ::selection {
-  background: var(--orange);
-  color: #111;
+  background: var(--accent-soft);
+  color: var(--text);
 }
