@@ -11,10 +11,10 @@ export function FilterBar() {
   return (
     <form className={styles.bar} onSubmit={(e) => e.preventDefault()}>
       <label className={styles.search}>
-        <span>find</span>
+        <span>dest</span>
         <input
           value={filters.query}
-          placeholder="number, subject, requester"
+          placeholder="flt, subject, requester"
           onChange={(e) => setFilters({ query: e.target.value })}
         />
       </label>
@@ -37,7 +37,7 @@ export function FilterBar() {
         </select>
       </label>
       <label>
-        <span>queue</span>
+        <span>term</span>
         <select
           value={filters.queue}
           onChange={(e) =>
@@ -76,7 +76,7 @@ export function FilterBar() {
           checked={filters.slaOnly}
           onChange={(e) => setFilters({ slaOnly: e.target.checked })}
         />
-        <span>sla breach only</span>
+        <span>delayed only</span>
       </label>
       <button
         type="button"

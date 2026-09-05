@@ -17,12 +17,15 @@ export function QueueList() {
     <div className={styles.wrap}>
       <FilterBar />
       <div className={styles.meta}>
-        {rows.length.toString().padStart(2, "0")} in view
+        <span>flt</span>
+        <span>destination</span>
+        <span>from / to</span>
+        <span className={styles.metaTail}>{rows.length.toString().padStart(2, "0")} listed</span>
       </div>
       {rows.length === 0 ? (
         <EmptyState
-          title="queue is quiet"
-          body="Nothing matches these filters. Clear them, or reload seed if you wiped the board."
+          title="board blank"
+          body="No flights match these filters. Clear them, or reload the board if you wiped the list."
         />
       ) : (
         <ul className={styles.list}>
@@ -39,14 +42,14 @@ export function QueueList() {
                   <span className={styles.subject}>{t.subject}</span>
                   <span className={styles.who}>
                     {t.requester.split("@")[0]}
-                    {t.assignee ? ` → ${t.assignee}` : " → unassigned"}
+                    {t.assignee ? ` → ${t.assignee}` : " → hold"}
                   </span>
                   <span className={styles.tags}>
                     <PriorityMark priority={t.priority} />
                     <StatusChip status={t.status} />
                     <span className={styles.q}>{t.queue}</span>
                     <span className={hot ? styles.slaHot : styles.sla}>
-                      sla {slaRemainingLabel(t, now)}
+                      etd {slaRemainingLabel(t, now)}
                     </span>
                   </span>
                 </button>

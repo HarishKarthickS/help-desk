@@ -18,8 +18,8 @@ export function ConsoleShell() {
     <div className={styles.frame}>
       <header className={styles.mast}>
         <div className={styles.brand}>
-          <span className={styles.mark}>help-desk</span>
-          <span className={styles.sub}>ops console · queue 04</span>
+          <span className={styles.mark}>Departures</span>
+          <span className={styles.sub}>help-desk · terminal Q04 · split-flap</span>
         </div>
         <dl className={styles.stats}>
           <div>
@@ -27,14 +27,14 @@ export function ConsoleShell() {
             <dd>{openCount.toString().padStart(2, "0")}</dd>
           </div>
           <div>
-            <dt>sla hot</dt>
+            <dt>delay</dt>
             <dd className={hot ? styles.hot : undefined}>
               {hot.toString().padStart(2, "0")}
             </dd>
           </div>
           <div>
-            <dt>shift</dt>
-            <dd>harish</dd>
+            <dt>gate</dt>
+            <dd>04</dd>
           </div>
           <div>
             <dt>utc</dt>
@@ -42,7 +42,7 @@ export function ConsoleShell() {
           </div>
         </dl>
         <button type="button" className={styles.reset} onClick={resetSeed}>
-          reload seed
+          reload board
         </button>
       </header>
       <div className={styles.split}>

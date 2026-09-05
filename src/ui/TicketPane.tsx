@@ -16,8 +16,8 @@ export function TicketPane() {
   if (!ticket) {
     return (
       <EmptyState
-        title="no ticket selected"
-        body="Pick a row in the queue. The thread, status moves, and notes live here."
+        title="no gate selected"
+        body="Tap a flap row on the board. Flight notes, status moves, and replies land here."
       />
     );
   }
@@ -29,7 +29,7 @@ export function TicketPane() {
     <article className={styles.pane}>
       <header className={styles.head}>
         <p className={styles.kicker}>
-          #{ticket.number} · {ticket.queue} · sla {slaRemainingLabel(ticket, desk.now)}
+          flt #{ticket.number} · {ticket.queue} · etd {slaRemainingLabel(ticket, desk.now)}
         </p>
         <h1>{ticket.subject}</h1>
         <p className={styles.meta}>
@@ -41,7 +41,7 @@ export function TicketPane() {
         </div>
         <div className={styles.actions}>
           <label>
-            assignee
+            crew
             <select
               value={ticket.assignee ?? ""}
               onChange={(e) =>
