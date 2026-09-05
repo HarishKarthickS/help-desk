@@ -1,5 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Martian+Mono:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --bg: #10120e;
+  --panel: #161914;
+  --panel-2: #1c2018;
+  --line: #2c3226;
+  --ink: #d2ccb8;
+  --dim: #7a806e;
+  --mute: #4e5446;
+  --amber: #e6a317;
+  --amber-dim: #8a6410;
+  --hot: #c45c26;
+  --ok: #8a9a62;
+  --note: #6e8a8a;
+  --shadow: 0 0 0 1px var(--line);
+  --type: "Martian Mono", ui-monospace, monospace;
+  --display: "Bebas Neue", "Arial Narrow", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--type);
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+body {
+  background-image:
+    linear-gradient(180deg, rgba(230, 163, 23, 0.04), transparent 28%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.18) 3px
+    );
+  background-attachment: fixed;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--amber);
+}
+
+::selection {
+  background: var(--amber);
+  color: #1a1408;
 }
