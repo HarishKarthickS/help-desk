@@ -1,56 +1,62 @@
 .chip {
   display: inline-block;
-  padding: 0.12rem 0.4rem 0.16rem;
-  border: 1px solid #333;
-  background: linear-gradient(#1c1c1c, #0a0a0a 48%, #050505 52%, #141414);
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  padding: 0.1rem 0.42rem 0.14rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 
 .open {
-  color: var(--orange);
-  border-color: var(--orange-deep);
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--line));
 }
 
 .waiting {
-  color: var(--hold);
-  border-color: color-mix(in srgb, var(--hold) 45%, #333);
+  color: var(--warn);
+  background: #fffbeb;
+  border-color: #fde68a;
 }
 
 .in_progress {
-  color: var(--ontime);
-  border-color: color-mix(in srgb, var(--ontime) 40%, #333);
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--line));
 }
 
 .resolved {
-  color: var(--ontime);
+  color: var(--ok);
+  background: #ecfdf3;
+  border-color: #abefc6;
 }
 
 .closed {
-  color: var(--gone);
+  color: var(--muted);
 }
 
 .pri {
-  font-family: var(--display);
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
 .p1 {
-  color: var(--delay);
+  color: var(--danger);
 }
 
 .p2 {
-  color: var(--orange);
+  color: var(--warn);
 }
 
 .p3 {
-  color: var(--legend);
+  color: var(--text);
 }
 
 .p4 {
-  color: var(--gone);
+  color: var(--faint);
 }

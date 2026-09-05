@@ -1,23 +1,22 @@
 .box {
-  margin: 1.4rem 0.9rem;
-  padding: 1.15rem 1.2rem;
-  border: 1px dashed var(--rule);
+  margin: 1.5rem 1.1rem;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
   max-width: 42ch;
-  background: linear-gradient(#161616, #0c0c0c);
+  background: var(--surface);
 }
 
 .box strong {
   display: block;
-  font-family: var(--display);
-  color: var(--orange);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 1.35rem;
-  margin-bottom: 0.45rem;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
 }
 
 .box p {
   margin: 0;
-  color: var(--dim);
+  color: var(--muted);
+  font-size: 0.88rem;
 }

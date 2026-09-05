@@ -16,8 +16,8 @@ export function TicketPane() {
   if (!ticket) {
     return (
       <EmptyState
-        title="no gate selected"
-        body="Tap a flap row on the board. Flight notes, status moves, and replies land here."
+        title="Select a ticket"
+        body="Choose a ticket from the list to read the thread, change status, or reply."
       />
     );
   }
@@ -29,7 +29,7 @@ export function TicketPane() {
     <article className={styles.pane}>
       <header className={styles.head}>
         <p className={styles.kicker}>
-          flt #{ticket.number} · {ticket.queue} · etd {slaRemainingLabel(ticket, desk.now)}
+          #{ticket.number} · {ticket.queue} · SLA {slaRemainingLabel(ticket, desk.now)}
         </p>
         <h1>{ticket.subject}</h1>
         <p className={styles.meta}>
@@ -41,14 +41,14 @@ export function TicketPane() {
         </div>
         <div className={styles.actions}>
           <label>
-            crew
+            Assignee
             <select
               value={ticket.assignee ?? ""}
               onChange={(e) =>
                 desk.assign(ticket.id, e.target.value || null)
               }
             >
-              <option value="">unassigned</option>
+              <option value="">Unassigned</option>
               {OPERATORS.map((op) => (
                 <option key={op} value={op}>
                   {op}
@@ -58,7 +58,7 @@ export function TicketPane() {
           </label>
           <div className={styles.moves}>
             {moves.length === 0 ? (
-              <span className={styles.dead}>no status moves</span>
+              <span className={styles.dead}>No status changes</span>
             ) : (
               moves.map((s) => (
                 <button
@@ -83,7 +83,7 @@ export function TicketPane() {
             <li key={c.id} className={c.kind === "note" ? styles.note : styles.pub}>
               <div>
                 <strong>{c.author}</strong>
-                <span>{c.kind === "note" ? "internal note" : "public"}</span>
+                <span>{c.kind === "note" ? "Internal note" : "Public reply"}</span>
                 <time dateTime={c.createdAt}>
                   {c.createdAt.replace("T", " ").slice(0, 16)}
                 </time>
@@ -107,14 +107,14 @@ export function TicketPane() {
             className={kind === "public" ? styles.on : undefined}
             onClick={() => setKind("public")}
           >
-            public reply
+            Public reply
           </button>
           <button
             type="button"
             className={kind === "note" ? styles.on : undefined}
             onClick={() => setKind("note")}
           >
-            internal note
+            Internal note
           </button>
         </div>
         <textarea
@@ -129,7 +129,7 @@ export function TicketPane() {
           required
         />
         <button type="submit" className={styles.send}>
-          post as {desk.operator}
+          Send as {desk.operator}
         </button>
       </form>
     </article>

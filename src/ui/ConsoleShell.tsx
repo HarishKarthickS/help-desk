@@ -12,37 +12,26 @@ export function ConsoleShell() {
     (t) => t.status !== "resolved" && t.status !== "closed",
   ).length;
   const hot = tickets.filter((t) => slaBreached(t, now)).length;
-  const clock = now.toISOString().slice(11, 19) + "Z";
 
   return (
     <div className={styles.frame}>
       <header className={styles.mast}>
         <div className={styles.brand}>
-          <span className={styles.mark}>Departures</span>
-          <span className={styles.sub}>help-desk · terminal Q04 · split-flap</span>
+          <span className={styles.mark}>Help desk</span>
+          <span className={styles.sub}>Inbox · tickets and replies</span>
         </div>
         <dl className={styles.stats}>
           <div>
-            <dt>open</dt>
-            <dd>{openCount.toString().padStart(2, "0")}</dd>
+            <dt>Open</dt>
+            <dd>{openCount}</dd>
           </div>
           <div>
-            <dt>delay</dt>
-            <dd className={hot ? styles.hot : undefined}>
-              {hot.toString().padStart(2, "0")}
-            </dd>
-          </div>
-          <div>
-            <dt>gate</dt>
-            <dd>04</dd>
-          </div>
-          <div>
-            <dt>utc</dt>
-            <dd>{clock}</dd>
+            <dt>SLA</dt>
+            <dd className={hot ? styles.hot : undefined}>{hot}</dd>
           </div>
         </dl>
         <button type="button" className={styles.reset} onClick={resetSeed}>
-          reload board
+          Reset queue
         </button>
       </header>
       <div className={styles.split}>

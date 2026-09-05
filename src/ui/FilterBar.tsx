@@ -11,15 +11,15 @@ export function FilterBar() {
   return (
     <form className={styles.bar} onSubmit={(e) => e.preventDefault()}>
       <label className={styles.search}>
-        <span>dest</span>
+        <span>Search</span>
         <input
           value={filters.query}
-          placeholder="flt, subject, requester"
+          placeholder="Number, subject, requester"
           onChange={(e) => setFilters({ query: e.target.value })}
         />
       </label>
       <label>
-        <span>status</span>
+        <span>Status</span>
         <select
           value={filters.status}
           onChange={(e) =>
@@ -28,7 +28,7 @@ export function FilterBar() {
             })
           }
         >
-          <option value="all">all</option>
+          <option value="all">All</option>
           {STATUSES.map((s) => (
             <option key={s} value={s}>
               {statusLabel(s)}
@@ -37,14 +37,14 @@ export function FilterBar() {
         </select>
       </label>
       <label>
-        <span>term</span>
+        <span>Queue</span>
         <select
           value={filters.queue}
           onChange={(e) =>
             setFilters({ queue: e.target.value as typeof filters.queue })
           }
         >
-          <option value="all">all</option>
+          <option value="all">All</option>
           {QUEUES.map((q) => (
             <option key={q} value={q}>
               {q}
@@ -53,7 +53,7 @@ export function FilterBar() {
         </select>
       </label>
       <label>
-        <span>pri</span>
+        <span>Priority</span>
         <select
           value={filters.priority}
           onChange={(e) =>
@@ -62,7 +62,7 @@ export function FilterBar() {
             })
           }
         >
-          <option value="all">all</option>
+          <option value="all">All</option>
           {PRIORITIES.map((p) => (
             <option key={p} value={p}>
               {p}
@@ -76,14 +76,14 @@ export function FilterBar() {
           checked={filters.slaOnly}
           onChange={(e) => setFilters({ slaOnly: e.target.checked })}
         />
-        <span>delayed only</span>
+        <span>SLA breached</span>
       </label>
       <button
         type="button"
         className={styles.clear}
         onClick={() => setFilters(DEFAULT_FILTERS)}
       >
-        clear
+        Clear
       </button>
     </form>
   );

@@ -2,38 +2,35 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
-  max-height: calc(100vh - 5.2rem);
+  max-height: calc(100vh - 3.4rem);
 }
 
 .head {
-  padding: 1.05rem 1.15rem 1rem;
-  border-bottom: 1px solid var(--rule);
-  background: #080808;
+  padding: 1.05rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
 }
 
 .kicker {
-  margin: 0 0 0.4rem;
-  color: var(--orange);
-  font-size: 0.66rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  margin: 0 0 0.35rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .head h1 {
   margin: 0;
-  font-family: var(--display);
-  font-size: 1.85rem;
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--legend);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--text);
 }
 
 .meta {
-  margin: 0.45rem 0 0.75rem;
-  color: var(--dim);
-  font-size: 0.74rem;
+  margin: 0.4rem 0 0.7rem;
+  color: var(--muted);
+  font-size: 0.82rem;
 }
 
 .badges {
@@ -53,16 +50,18 @@
 .actions label {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
-  color: var(--orange);
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
+  gap: 0.22rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
 .actions select {
-  background: var(--flap);
-  border: 1px solid var(--rule);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
   padding: 0.4rem 0.5rem;
   min-width: 10rem;
 }
@@ -74,38 +73,41 @@
 }
 
 .moves button {
-  background: linear-gradient(#1c1c1c, #0a0a0a);
-  border: 1px solid #333;
-  padding: 0.4rem 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.38rem 0.6rem;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.64rem;
-  color: var(--legend);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .moves button:hover {
-  border-color: var(--orange);
-  color: var(--orange);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .dead {
-  color: var(--gone);
-  font-size: 0.72rem;
+  color: var(--faint);
+  font-size: 0.82rem;
 }
 
 .thread {
   list-style: none;
   margin: 0;
-  padding: 0.8rem 1.15rem 1.15rem;
+  padding: 0.9rem 1.25rem 1.15rem;
   overflow: auto;
 }
 
 .thread li {
-  margin-bottom: 0.7rem;
-  padding: 0.7rem 0.8rem;
-  border: 1px solid #2a2a2a;
-  background: linear-gradient(#1a1a1a, #101010);
+  margin-bottom: 0.65rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
 }
 
 .thread li div {
@@ -114,12 +116,12 @@
   gap: 0.55rem;
   align-items: baseline;
   margin-bottom: 0.35rem;
-  font-size: 0.7rem;
-  color: var(--dim);
+  font-size: 0.75rem;
+  color: var(--muted);
 }
 
 .thread strong {
-  color: var(--legend);
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -129,22 +131,25 @@
 }
 
 .note {
-  border-left: 4px solid var(--hold) !important;
+  background: #fffbeb !important;
+  border-color: #fde68a !important;
 }
 
 .pub {
-  border-left: 4px solid var(--orange-deep) !important;
+  border-left: 3px solid var(--accent) !important;
 }
 
 .none {
   border-style: dashed !important;
-  color: var(--dim);
+  box-shadow: none;
+  color: var(--muted);
+  background: transparent !important;
 }
 
 .composer {
-  padding: 0.8rem 1.15rem 1.05rem;
-  border-top: 8px solid var(--orange);
-  background: #050505;
+  padding: 0.8rem 1.25rem 1.05rem;
+  border-top: 1px solid var(--line);
+  background: var(--surface);
   display: grid;
   gap: 0.5rem;
 }
@@ -156,48 +161,49 @@
 
 .kind button {
   background: transparent;
-  border: 1px solid #333;
-  padding: 0.28rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.28rem 0.55rem;
   cursor: pointer;
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--dim);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 .kind .on {
-  color: #111;
-  background: var(--orange);
-  border-color: var(--orange);
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
 }
 
 .composer textarea {
   width: 100%;
   resize: vertical;
-  background: var(--flap);
-  border: 1px solid var(--rule);
-  padding: 0.55rem;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.7rem;
   outline: none;
 }
 
 .composer textarea:focus {
-  border-color: var(--orange-deep);
+  border-color: var(--accent);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .send {
   justify-self: start;
-  background: var(--orange);
-  color: #111;
+  background: var(--accent);
+  color: #fff;
   border: 0;
-  padding: 0.5rem 0.85rem;
+  border-radius: 6px;
+  padding: 0.45rem 0.85rem;
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.7rem;
-  font-weight: 700;
-  font-family: var(--display);
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
 .send:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.06);
 }
