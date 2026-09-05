@@ -1,54 +1,56 @@
 .chip {
   display: inline-block;
-  padding: 0.08rem 0.35rem;
-  border: 1px solid var(--line);
-  font-size: 0.65rem;
-  letter-spacing: 0.06em;
+  padding: 0.12rem 0.4rem 0.16rem;
+  border: 1px solid #333;
+  background: linear-gradient(#1c1c1c, #0a0a0a 48%, #050505 52%, #141414);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
 }
 
 .open {
-  color: var(--amber);
-  border-color: var(--amber-dim);
+  color: var(--orange);
+  border-color: var(--orange-deep);
 }
 
 .waiting {
-  color: var(--note);
-  border-color: color-mix(in srgb, var(--note) 50%, var(--line));
+  color: var(--hold);
+  border-color: color-mix(in srgb, var(--hold) 45%, #333);
 }
 
 .in_progress {
-  color: var(--ink);
-  border-color: var(--ok);
+  color: var(--ontime);
+  border-color: color-mix(in srgb, var(--ontime) 40%, #333);
 }
 
 .resolved {
-  color: var(--ok);
+  color: var(--ontime);
 }
 
 .closed {
-  color: var(--mute);
+  color: var(--gone);
 }
 
 .pri {
-  font-weight: 600;
+  font-family: var(--display);
+  font-size: 0.78rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .p1 {
-  color: var(--hot);
+  color: var(--delay);
 }
 
 .p2 {
-  color: var(--amber);
+  color: var(--orange);
 }
 
 .p3 {
-  color: var(--ink);
+  color: var(--legend);
 }
 
 .p4 {
-  color: var(--mute);
+  color: var(--gone);
 }
