@@ -3,6 +3,7 @@
 import { useDesk } from "@/data";
 import { slaBreached } from "@/domain";
 import { QueueList } from "./QueueList";
+import { TicketPane } from "./TicketPane";
 import styles from "./ConsoleShell.module.css";
 
 export function ConsoleShell() {
@@ -49,7 +50,7 @@ export function ConsoleShell() {
           <QueueList />
         </section>
         <section className={styles.pane} aria-label="Ticket detail">
-          <p className={styles.placeholder}>select a ticket when the queue is live.</p>
+          <TicketPane />
         </section>
       </div>
     </div>
