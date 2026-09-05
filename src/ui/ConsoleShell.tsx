@@ -2,6 +2,7 @@
 
 import { useDesk } from "@/data";
 import { slaBreached } from "@/domain";
+import { QueueList } from "./QueueList";
 import styles from "./ConsoleShell.module.css";
 
 export function ConsoleShell() {
@@ -45,7 +46,7 @@ export function ConsoleShell() {
       </header>
       <div className={styles.split}>
         <section className={styles.queue} aria-label="Ticket queue">
-          <p className={styles.placeholder}>queue list comes online next.</p>
+          <QueueList />
         </section>
         <section className={styles.pane} aria-label="Ticket detail">
           <p className={styles.placeholder}>select a ticket when the queue is live.</p>

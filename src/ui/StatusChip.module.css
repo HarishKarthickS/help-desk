@@ -1,0 +1,54 @@
+.chip {
+  display: inline-block;
+  padding: 0.08rem 0.35rem;
+  border: 1px solid var(--line);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.open {
+  color: var(--amber);
+  border-color: var(--amber-dim);
+}
+
+.waiting {
+  color: var(--note);
+  border-color: color-mix(in srgb, var(--note) 50%, var(--line));
+}
+
+.in_progress {
+  color: var(--ink);
+  border-color: var(--ok);
+}
+
+.resolved {
+  color: var(--ok);
+}
+
+.closed {
+  color: var(--mute);
+}
+
+.pri {
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.p1 {
+  color: var(--hot);
+}
+
+.p2 {
+  color: var(--amber);
+}
+
+.p3 {
+  color: var(--ink);
+}
+
+.p4 {
+  color: var(--mute);
+}
