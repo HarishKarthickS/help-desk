@@ -1,7 +1,12 @@
+"use client";
+
+import { DeskProvider } from "@/data";
+import { ConsoleShell } from "@/ui/ConsoleShell";
+
 export default function HomePage() {
   return (
-    <main>
-      <p>queue offline</p>
-    </main>
+    <DeskProvider>
+      <ConsoleShell />
+    </DeskProvider>
   );
 }

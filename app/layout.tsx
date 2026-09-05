@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "help-desk",
+  title: "help-desk — queue",
   description: "Spare ops console for support tickets, queues, and comments.",
 };
 
